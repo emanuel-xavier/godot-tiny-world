@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://1yqlbm3md0bo"]
+
+[ext_resource type="Texture2D" uid="uid://bu8qa6k44xcci" path="res://assets/terrain/decoration/tree.png" id="1_15hee"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s022"]
+atlas = ExtResource("1_15hee")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xdur"]
+atlas = ExtResource("1_15hee")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojdt6"]
+atlas = ExtResource("1_15hee")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvfnp"]
+atlas = ExtResource("1_15hee")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jdcqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s022")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xdur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojdt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvfnp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l4ida"]
+radius = 12.0
+height = 44.0
+
+[node name="Tree" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_jdcqa")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(2, 55)
+shape = SubResource("CapsuleShape2D_l4ida")

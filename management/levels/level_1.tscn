@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctrbuy0qaaaqg"]
+
+[ext_resource type="PackedScene" uid="uid://dpubqu32q0ksq" path="res://management/base_level.tscn" id="1_5niqy"]
+[ext_resource type="PackedScene" uid="uid://cf0eeva8apird" path="res://goblin/goblin.tscn" id="1_peamk"]
+[ext_resource type="PackedScene" uid="uid://1yqlbm3md0bo" path="res://management/tree.tscn" id="2_8wlh0"]
+[ext_resource type="PackedScene" uid="uid://d4fogafuk32gn" path="res://management/water_rocks.tscn" id="3_i4t0h"]
+
+[node name="Level" instance=ExtResource("1_5niqy")]
+next_level_scene_path = "res://management/levels/level_2.tscn"
+current_level_scene_path = "res://management/levels/level_1.tscn"
+
+[node name="Decoration" parent="Terrain" index="2"]
+layer_0/tile_data = PackedInt32Array(786438, 2, 0, 720907, 2, 0, 196637, 2, 0, -131054, 2, 0, -196598, 2, 0, 524287, 2, 0, 983060, 2, 0, 917520, 1, 0, 589844, 1, 0, -524270, 1, 0, -786414, 1, 0, -196574, 1, 0, 655362, 1, 0, 851971, 1, 0, 524295, 1, 0, 65550, 1, 0, -131063, 1, 0, 983062, 4, 0, 720927, 4, 0, 65566, 4, 0, -196589, 4, 0, -458734, 4, 0, -131064, 4, 0, -131065, 4, 0, 917522, 6, 0, 393234, 6, 0, -196590, 6, 0, -327670, 6, 0, -327671, 6, 0)
+
+[node name="Tree" parent="Terrain/Decoration" index="0" instance=ExtResource("2_8wlh0")]
+position = Vector2(586, 45)
+
+[node name="Tree2" parent="Terrain/Decoration" index="1" instance=ExtResource("2_8wlh0")]
+position = Vector2(444, 707)
+
+[node name="Tree5" parent="Terrain/Decoration" index="2" instance=ExtResource("2_8wlh0")]
+position = Vector2(1964, 646)
+
+[node name="Tree6" parent="Terrain/Decoration" index="3" instance=ExtResource("2_8wlh0")]
+position = Vector2(1340, 190)
+
+[node name="Tree3" parent="Terrain/Decoration" index="4" instance=ExtResource("2_8wlh0")]
+position = Vector2(1472, -222)
+
+[node name="Tree4" parent="Terrain/Decoration" index="5" instance=ExtResource("2_8wlh0")]
+position = Vector2(1472, -222)
+
+[node name="WaterRocks" parent="Terrain/Decoration" index="6" instance=ExtResource("3_i4t0h")]
+position = Vector2(931, 185)
+
+[node name="WaterRocks2" parent="Terrain/Decoration" index="7" instance=ExtResource("3_i4t0h")]
+position = Vector2(-320, 320)
+
+[node name="WaterRocks3" parent="Terrain/Decoration" index="8" instance=ExtResource("3_i4t0h")]
+position = Vector2(-284, 757)
+
+[node name="WaterRocks4" parent="Terrain/Decoration" index="9" instance=ExtResource("3_i4t0h")]
+position = Vector2(1626, 1268)
+
+[node name="WaterRocks5" parent="Terrain/Decoration" index="10" instance=ExtResource("3_i4t0h")]
+position = Vector2(2510, 495)
+
+[node name="Goblin2" parent="." index="2" instance=ExtResource("1_peamk")]
+position = Vector2(1919, 0)
+collision_mask = 5
+
+[node name="Knight" parent="." index="3"]
+damage = 5

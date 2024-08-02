@@ -1,0 +1,206 @@
+[gd_scene load_steps=12 format=3 uid="uid://cmc85sl3j0kkp"]
+
+[ext_resource type="Script" path="res://management/menu.gd" id="1_rvseq"]
+[ext_resource type="FontFile" uid="uid://cbq7kxjykyat7" path="res://assets/fonts/Kurland.otf" id="2_5laay"]
+[ext_resource type="Script" path="res://management/Terrain.gd" id="3_q62qr"]
+[ext_resource type="Texture2D" uid="uid://cqgox6r567gg4" path="res://assets/terrain/water/water.png" id="4_uwfgl"]
+[ext_resource type="Texture2D" uid="uid://du5ge04xwl5nu" path="res://assets/terrain/ground/grass.png" id="5_mebjg"]
+[ext_resource type="PackedScene" uid="uid://cf0eeva8apird" path="res://goblin/goblin.tscn" id="6_3wvep"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5gt8b"]
+font = ExtResource("2_5laay")
+font_size = 64
+outline_size = 8
+outline_color = Color(0, 0, 0, 0.6)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(7, 7)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xu1ut"]
+texture = ExtResource("4_uwfgl")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_66b3l"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_xu1ut")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnlto"]
+texture = ExtResource("5_mebjg")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+1:0/0/terrains_peering_bit/left_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/bottom_left_corner = 0
+2:0/0/terrains_peering_bit/left_side = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 0
+3:0/0/terrains_peering_bit/bottom_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_right_corner = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+0:1/0/terrains_peering_bit/top_right_corner = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_right_corner = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/bottom_left_corner = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_left_corner = 0
+1:1/0/terrains_peering_bit/top_side = 0
+1:1/0/terrains_peering_bit/top_right_corner = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/bottom_left_corner = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_left_corner = 0
+2:1/0/terrains_peering_bit/top_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/terrains_peering_bit/bottom_side = 0
+3:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+0:2/0/terrains_peering_bit/top_right_corner = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_left_corner = 0
+1:2/0/terrains_peering_bit/top_side = 0
+1:2/0/terrains_peering_bit/top_right_corner = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_left_corner = 0
+2:2/0/terrains_peering_bit/top_side = 0
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 0
+3:2/0/terrains_peering_bit/top_side = 0
+0:3/0 = 0
+0:3/0/terrain_set = 0
+0:3/0/terrain = 0
+0:3/0/terrains_peering_bit/right_side = 0
+1:3/0 = 0
+1:3/0/terrain_set = 0
+1:3/0/terrain = 0
+1:3/0/terrains_peering_bit/right_side = 0
+1:3/0/terrains_peering_bit/left_side = 0
+2:3/0 = 0
+2:3/0/terrain_set = 0
+2:3/0/terrain = 0
+2:3/0/terrains_peering_bit/left_side = 0
+3:3/0 = 0
+3:3/0/terrain_set = 0
+3:3/0/terrain = 0
+
+[sub_resource type="TileSet" id="TileSet_f5v0g"]
+tile_size = Vector2i(64, 64)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_pnlto")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rvseq")
+
+[node name="GameName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 392.0
+offset_bottom = 128.0
+text = "Tiny Swords
+"
+label_settings = SubResource("LabelSettings_5gt8b")
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -360.0
+offset_right = -60.0
+offset_bottom = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="NewGame" type="Button" parent="Buttons" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5laay")
+theme_override_font_sizes/font_size = 32
+text = "New Game"
+alignment = 2
+
+[node name="Quit" type="Button" parent="Buttons" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5laay")
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+alignment = 2
+
+[node name="Terrain" type="Node2D" parent="."]
+z_index = -1
+script = ExtResource("3_q62qr")
+
+[node name="Water" type="TileMap" parent="Terrain"]
+z_index = -2
+tile_set = SubResource("TileSet_66b3l")
+rendering_quadrant_size = 64
+format = 2
+
+[node name="Grass" type="TileMap" parent="Terrain"]
+tile_set = SubResource("TileSet_f5v0g")
+rendering_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(196614, 0, 0, 262149, 65536, 0, 262150, 65536, 1, 196615, 65536, 0, 196616, 131072, 0, 262151, 65536, 1, 327686, 65536, 1, 327685, 65536, 1, 327684, 65536, 1, 327683, 65536, 1, 393219, 65536, 1, 458755, 65536, 1, 458756, 65536, 2, 458757, 65536, 2, 393221, 65536, 1, 393222, 65536, 1, 393220, 65536, 1, 458758, 65536, 1, 458759, 65536, 1, 524295, 65536, 2, 524296, 131072, 2, 458760, 65536, 1, 393224, 65536, 1, 327688, 65536, 1, 262152, 65536, 1, 393223, 65536, 1, 327687, 65536, 1, 393226, 131072, 2, 393225, 65536, 1, 327689, 65536, 1, 262153, 131072, 0, 327690, 131072, 0, 458761, 131072, 2, 524294, 0, 2, 262148, 65536, 0, 262147, 65536, 0, 393218, 65536, 1, 524290, 0, 2, 458754, 65536, 1, 393217, 0, 1, 458753, 0, 2, 327682, 65536, 1, 262146, 0, 0, 327681, 0, 0, 524291, 131072, 2)
+
+[node name="Goblin" parent="." instance=ExtResource("6_3wvep")]
+position = Vector2(500, 293)
